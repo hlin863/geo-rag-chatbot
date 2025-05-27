@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Why can't I add 251 curve shades to my log?",
+    "answer": "You can't add 251 curve shades to your log because the maximum number of curve shades per plot is limited to 250.",
+    "timeInMs": 4395
+  },
+  {
+    "question": "What is the maximum number of data points allowed per curve?",
+    "answer": "Unlimited.",
+    "timeInMs": 1676
+  },
+  {
+    "question": "I want to use the name \"Hydrocarbon bearing zone highlighted\" as my curve shade name. Why is it not allowed?",
+    "answer": "The curve shade name you want to use, \"Hydrocarbon bearing zone highlighted,\" exceeds the maximum allowed length for a curve shade name, which is 20 characters. Your proposed name is 34 characters long, making it too long to be accepted. You will need to shorten the name to fit within the 20-character limit.",
+    "timeInMs": 2143
+  },
+  {
+    "question": "What is the maximum number of curves I can load in a data file?",
+    "answer": "The maximum number of curves you can load in a data file is 450.",
+    "timeInMs": 1170
+  },
+  {
+    "question": "I have already added 20,000 modifiers to my log. Why can't I add more?",
+    "answer": "You cannot add more modifiers to your log because the maximum number of modifiers per plot is 20,000. Since you have already reached that limit, you cannot add additional modifiers.",
+    "timeInMs": 1195
+  },
+  {
+    "question": "How many log headers can I add to my log?",
+    "answer": "You can add a maximum of 50 log headers to your log.",
+    "timeInMs": 1547
+  },
+  {
+    "question": "How many tadpole definitions am I allowed to create?",
+    "answer": "You are allowed to create 5 tadpole definitions.",
+    "timeInMs": 4333
+  },
+  {
+    "question": "Why can't I add another layout to my log?",
+    "answer": "You cannot add another layout to your log because the maximum number of layouts per ODF (Open Document Format) is 19. If you have already reached this limit, you will not be able to add more layouts.",
+    "timeInMs": 1847
+  }
+]
