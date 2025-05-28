@@ -6,8 +6,13 @@ export default function Chat() {
   const [answer, setAnswer] = useState('');
 
   const askQuestion = async () => {
-    const res = await axios.post('http://localhost:3001/ask', { question });
-    setAnswer(res.data.answer);
+    try {
+      const res = await axios.post('http://localhost:3001/ask', { question });
+      setAnswer(res.data.answer);
+    } catch (err) {
+      console.error('Error fetching answer:', err);
+      setAnswer('❌ Failed to get response. Please make sure the backend is running.');
+    }
   };
 
   return (
