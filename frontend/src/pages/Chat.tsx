@@ -7,7 +7,7 @@ export default function Chat() {
 
   const askQuestion = async () => {
     try {
-      const res = await axios.post('http://localhost:3001/ask', { question });
+      const res = await axios.post('http://localhost:3001/api/rag', { question });
       setAnswer(res.data.answer);
     } catch (err) {
       console.error('Error fetching answer:', err);
