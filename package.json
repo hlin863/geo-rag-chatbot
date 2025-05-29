@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:frontend": "cd frontend && vite",
-    "dev:backend": "cd backend",
+    "dev:backend": "cd backend && ts-node src/server.ts",
     "build": "vite build",
     "test": "jest"
   },
