@@ -1,4 +1,3 @@
-// server.ts or app.ts (your Express server)
 import express from 'express';
 import cors from 'cors';
 import fs from 'fs';
@@ -11,17 +10,31 @@ app.use(express.json());
 
 app.post('/ask', async (req, res) => {
   const question = req.body.question;
-  const data = { question, timestamp: Date.now() };
+  const timestamp = new Date().toISOString();
 
   try {
+    const answer = await ask(question);  // 🧠 GeoBot answers here
+
     const outDir = path.resolve(__dirname, '../output');
     if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
-    const filePath = path.join(outDir, 'test.json');
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-    console.log('✅ Written to file:', filePath);
+    const logFilePath = path.join(outDir, 'chat_log.json');
+    const logEntry = { question, answer, timestamp };
 
-    const answer = await ask(question);  // 🧠 GeoBot answers here
+    let chatLog: any[] = [];
+    if (fs.existsSync(logFilePath)) {
+      try {
+        const rawLog = fs.readFileSync(logFilePath, 'utf-8');
+        chatLog = JSON.parse(rawLog);
+      } catch (parseErr) {
+        console.warn('⚠️ Could not parse chat_log.json. Starting fresh.');
+      }
+    }
+
+    chatLog.push(logEntry);
+    fs.writeFileSync(logFilePath, JSON.stringify(chatLog, null, 2));
+    console.log('✅ Appended to chat_log.json');
+
     res.send({ answer });
   } catch (err) {
     console.error('❌ Error:', err);
