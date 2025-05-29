@@ -1,9 +1,9 @@
 import { queryRelevantChunks } from '../embedding/queryEmbeddings';
 import { generateAnswer } from '../embedding/answerGenerator';
 
-const question = 'What are the maximum limits of lithology types per plot?';
+// const question = 'What are the maximum limits of lithology types per plot?';
 
-async function ask() {
+export async function ask(question: string) {
   console.log(`🧠 Question: ${question}\n`);
 
   const chunks = await queryRelevantChunks(question);
@@ -17,5 +17,3 @@ async function ask() {
 
   console.log(`\n💬 Answer:\n${answer}`);
 }
-
-ask().catch(err => console.error('❌ Error in final stage:', err));
