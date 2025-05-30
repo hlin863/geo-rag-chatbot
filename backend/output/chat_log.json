@@ -14,5 +14,14 @@
   {
     "question": "Summarise the GEO limit values",
     "timestamp": "2025-05-30T12:24:58.397Z"
+  },
+  {
+    "question": "How many tracks can you plot?",
+    "timestamp": "2025-05-30T14:16:39.117Z"
+  },
+  {
+    "question": "How many columns are there in each data file?",
+    "answer": "There are 450 columns in each data file.",
+    "timestamp": "2025-05-30T15:14:09.065Z"
   }
 ]

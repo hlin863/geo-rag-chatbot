@@ -16,4 +16,6 @@ export async function ask(question: string) {
   console.timeEnd('⏱️ Answer generation time');
 
   console.log(`\n💬 Answer:\n${answer}`);
+
+  return answer;
 }
