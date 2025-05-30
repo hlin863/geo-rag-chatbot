@@ -31,6 +31,9 @@ app.post('/ask', async (req, res) => {
       }
     }
 
+    console.log('💬 Final log entry:', logEntry);
+
+    // NOTE: answer sometimes not saved in chat_log.json — logged in terminal instead
     chatLog.push(logEntry);
     fs.writeFileSync(logFilePath, JSON.stringify(chatLog, null, 2));
     console.log('✅ Appended to chat_log.json');
